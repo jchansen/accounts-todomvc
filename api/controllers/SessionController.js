@@ -34,10 +34,22 @@ module.exports = {
   },
 
   create: function(req, res, next){
-    passport.authenticate('stormpath', {
-      successRedirect: '/',
-      failureRedirect: '/session/new',
-      failureFlash: true
+//    passport.authenticate('stormpath', {
+//      successRedirect: '/',
+//      failureRedirect: '/session/new',
+//      failureFlash: true
+//    })(req, res, next);
+
+    passport.authenticate('stormpath', function(err, user, info) {
+      if (err) { return next(err); }
+      if (!user) { return res.redirect('/session/new'); }
+      req.logIn(user, function(err) {
+        if (err) { return next(err); }
+        // base64 encode the user data to transmit as a query param
+        var userAsJsonString = JSON.stringify(user);
+        var base64EncdodedUser = new Buffer(userAsJsonString).toString('base64');
+        return res.redirect('//' + user.username + '.bonsaidigital.io' + '/session/callback?auth=' + base64EncdodedUser);
+      });
     })(req, res, next);
   },
 
