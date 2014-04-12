@@ -34,26 +34,7 @@ module.exports.routes = {
   // (This would also work if you had a file at: `/views/home.ejs`)
   '/': {
     view: 'home/index'
-  },
-
-  /*
-  *  List Routes
-  */
-  'POST /api/lists': 'api/ListsController.create',
-  'PUT /api/lists/:id': 'api/ListsController.update',
-  'GET /api/lists/:listName/todos': 'api/ListsController.getTodosFromList',
-
-  /*
-   *  Todo Routes
-   */
-  'POST /api/todos': 'api/TodosController.create',
-  'PUT /api/todos/:id': 'api/TodosController.update',
-
-  /*
-   *  User Routes
-   */
-  '/api/users/:id/lists': 'api/UsersController.getListsForUser',
-  '/api/lists/:id/users': 'api/ListsController.getUsersForList'
+  }
 
   /*
   // But what if you want your home page to display
