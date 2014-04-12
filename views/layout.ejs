@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="shortcut icon" href="../../assets/ico/favicon.ico">-->
+
+  <title><%- title %></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Custom styles for this template -->
+  <link href="/styles/custom.css" rel="stylesheet">
+</head>
+
+<body>
+<%- partial('partials/header')%>
+<%- body %>
+<%- partial('partials/footer')%>
+
+<script src="/bower_components/jquery/jquery.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+<!-- Bring in the socket.io client -->
+<script type="text/javascript" src="/js/socket.io.js"></script>
+<!-- then beef it up with some convenience logic for talking to Sails.js -->
+<script type="text/javascript" src="/js/sails.io.js"></script>
+<!-- listen on socket.io for incoming messages -->
+<script type="text/javascript" src="/js/app.js"></script>
+
+</body>
+</html>

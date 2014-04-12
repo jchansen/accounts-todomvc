@@ -1,0 +1,2 @@
+Plus symbol:
+https://www.iconfinder.com/icons/170265/add_create_green_green_cross_new_page_plus_sum_summary_text_up_user_icon

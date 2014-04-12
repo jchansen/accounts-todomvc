@@ -1,0 +1,29 @@
+{
+  "name": "sails-TodoMVC",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "dependencies": {
+    "sails": "0.9.16",
+    "grunt": "0.4.1",
+    "sails-disk": "~0.9.0",
+    "ejs": "0.8.4",
+    "optimist": "0.3.4",
+    "sails-mongo": "~0.9.7",
+    "passport": "~0.2.0",
+    "passport-local": "~1.0.0",
+    "bcrypt": "~0.7.7",
+    "bower": "~1.3.2",
+    "stormpath": "~0.1.2",
+    "passport-strategy": "~1.0.0",
+    "q": "~1.0.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "",
+  "license": ""
+}

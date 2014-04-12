@@ -1,0 +1,36 @@
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">TodoMVC++</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+      <% //if(user) { %>
+          <li class="<%= req.url === '/admin/users' ? 'active' : ''%>"><a href="/admin/users">Users (admin)</a></li>
+          <li class="<%= req.url === '/admin/lists' ? 'active' : ''%>"><a href="/admin/lists">Lists (admin)</a></li>
+          <li class="<%= req.url === '/lists' ? 'active' : ''%>"><a href="/lists">Lists (Log in first)</a></li>
+      <% //} %>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if(!user) { %>
+        <li data-action="signIn"><a href="/session/new">Sign In</a></li>
+        <% } else { %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= user.username %><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/user/show/<%= user.id %>">Profile</a></li>
+            <li data-action="signOut"><a href="/session/destroy">Sign out</a></li>
+          </ul>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</div>

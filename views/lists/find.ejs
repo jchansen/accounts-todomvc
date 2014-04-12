@@ -1,0 +1,26 @@
+<div class='container'>
+  <h1>Details for <%= list.name %></h1>
+</div>
+
+<div class="container">
+  <h2>Accessible by these users:</h2>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(users, function (user, index) { %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= user.username %></td>
+      <td><a href="/users/<%= user.username %>">view</a></td>
+    </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>

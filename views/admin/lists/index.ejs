@@ -1,0 +1,20 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% _.each(lists, function (list, index) { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= list.name %></td>
+          <td><a href="/lists/<%= list.name %>">view</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
